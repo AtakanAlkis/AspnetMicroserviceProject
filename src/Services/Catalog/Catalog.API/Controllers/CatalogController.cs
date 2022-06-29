@@ -21,7 +21,6 @@ namespace Catalog.API.Controllers
         [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            _logger.LogInformation("GetProducts called");
             var products = await _repository.GetProducts();
             return Ok(products);
         }
